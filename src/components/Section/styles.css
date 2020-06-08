@@ -1,0 +1,146 @@
+section {
+  box-sizing: border-box;
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  padding-top: 90px;
+  justify-content: flex-start;
+}
+
+.Section__image {
+  overflow: hidden;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-right: 30px;
+  height: 600px;
+  transition: .4s;
+}
+
+.Section__image:hover {
+  box-shadow: -14px -14px 20px 0 #FFFFFF, 18px 18px 30px 0 #fce3ec;
+  transition: .6s;
+}
+
+.Section__image img {
+  border-radius: 6px;
+  height: 600px;
+}
+
+.Section__infos {
+  box-sizing: border-box;
+  padding-top: 160px;
+  height: 600px;
+}
+
+.Section__name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Section__price {
+  margin-top: 30px;
+}
+
+.Section__priceAct {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ed5283;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.Section__installments {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-weight: 600;
+}
+
+.Section__size {
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555;
+}
+
+.Section__selectSize {
+  margin-top: 20px;
+}
+
+.Section__selectSize button {
+  outline: none;
+  border: none;
+  background: none;
+  background-color: #ddd;
+  margin: 2px 4px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: #222;
+  font-weight: bold;
+}
+
+.Section__selectSize button:focus {
+  background-color: #444;
+  color: #fff;
+}
+
+.Section__add {
+  width: 350px;
+  outline: none;
+  border: none;
+  background: none;
+  margin-top: 40px;
+  background-color: #ed5283;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 6px;
+  transition: .4s;
+}
+.Section__add:hover {
+  box-shadow: -14px -14px 20px 0 #FFFFFF, 18px 18px 30px 0 #ed5283;
+  transition: .6s;
+}
+
+@media screen and (max-width: 670px) {
+
+  section {
+    box-sizing: border-box;
+    height: auto;
+    padding-left: 10px;
+    flex-wrap: wrap;
+  }
+
+  .Section__image {
+    height: 400px;
+  }
+
+  .Section__image img {
+    height: 400px;
+  }
+
+  .Section__infos {
+    padding-top: 50px;
+    margin-left: 10px;
+  }
+
+  .Section__name {
+    font-size: 22px;
+  }
+
+  .Section__price {
+    margin-top: 20px;
+  }
+
+  .Section__selectSize {
+    margin-top: 20px;
+  }
+
+  .Section__add {
+    width: 280px;
+  }
+
+}

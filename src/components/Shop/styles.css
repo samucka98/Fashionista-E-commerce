@@ -1,0 +1,13 @@
+
+#Shop {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 770px) {
+  #Shop {
+    justify-content: center;
+  }
+}

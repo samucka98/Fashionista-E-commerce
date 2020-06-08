@@ -1,0 +1,76 @@
+.ItemResult {
+  box-sizing: border-box;
+  width: 96%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-right: 10px;
+}
+
+.ItemResult:hover {
+  box-shadow: -10px -10px 20px 0 #fff, 10px 10px 30px 0 #ececec;
+  transition: .3s;
+}
+
+.ItemResult__img {
+  height: 200px;
+}
+
+.ItemResult__img img {
+  height: 200px;
+}
+
+.ItemResult__name {
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+}
+
+.ItemResult__price {
+  height: 200px;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ItemResult__pregular {
+  margin-top: 10px;
+  text-decoration: line-through;
+  color: #444;
+}
+
+.ItemResult__pactual {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #ed5283
+}
+
+.ItemResult__installments {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 670px) {
+  .ItemResult {
+    width: 98%;
+    height: 150px;
+  }
+
+  .ItemResult__img {
+    height: 150px;
+  }
+
+  .ItemResult__img img {
+    height: 150px;
+  }
+
+  .ItemResult__name {
+    font-size: 12px;
+  }
+}
