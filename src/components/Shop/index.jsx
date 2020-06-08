@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import loadItems from '../../Store/Products/Actions/productsAction';
+import loadItems from '../../Actions/productsAction';
 import Item from '../Item';
 import './styles.css';
 
@@ -11,7 +11,6 @@ const Shop = () => {
 
   useEffect(()=> {
     dispatch(loadItems());
-    
   });
 
   return (

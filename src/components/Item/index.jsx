@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import selectProd from '../../Store/Products/Actions/productAction';
+import selectProd from '../../Actions/productAction';
 import imgErr from '../../assets/error.jpg';
 import './styles.css';
-
 
 const Item = ({ product }) => {
   const dispatch = useDispatch();

@@ -1,4 +1,8 @@
-function btnSearchReducer(state = 'hidden', action) {
+const INITIAL_STATE = {
+  begin: 'hidden'
+}
+
+function btnSearchReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'SEARCH':
       return state = action.payload;

@@ -6,7 +6,6 @@ const name = "VESTIDO TAL E TAL E TAL"
 const size = "P";
 const price = "R$ 40,00";
 const installments = "2x R$ 20,90";
-
 const qtd = 4;
 
 const ItemBag = () => {

@@ -2,8 +2,7 @@ import React from 'react';
 import ItemResult from '../ItemResult';
 import './styles.css';
 
-const Search = () => {
-
+const Search = ({ handleSearch }) => {
   return (
     <div className="Search">
       <div className="Search__void"></div>

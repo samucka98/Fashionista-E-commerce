@@ -1,14 +1,11 @@
 import React from 'react';
-
 import Nav from '../Nav';
-
 import './styles.css';
 
 const Header = () => {
   return (
     <header className="Header">
       <Nav />
-
       <div className="Header__info">
         <div className="Header__box">
           <h3 className="Header__name">Fashionista</h3>

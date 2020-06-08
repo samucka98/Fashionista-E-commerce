@@ -4,6 +4,8 @@ import Search from '../Search';
 import Bag from '../Bag';
 import './styles.css';
 
+const bagItems = 3;
+
 const Nav = () => {
   return (
     <>
@@ -26,14 +28,14 @@ const Nav = () => {
                 <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                 <span>Minhas Compras</span>
                 <div className="Nav__qtd">
-                  10
+                  { bagItems }
                 </div>
               </button>
             </li>
           </ul>
         </div>
       </nav>
-      <Search/>
+      <Search handleSearch={() => 'visible'}/>
       <Bag />
     </>
   );
