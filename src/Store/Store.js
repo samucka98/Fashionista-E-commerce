@@ -4,7 +4,7 @@ import productsReducer from '../Reducers/productsReducer'
 import productReducer from '../Reducers/productReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 
-const SAVED_DATA = "savedData";
+const SAVED_DATA = "SavedData";
 
 function persistState(data) {
   localStorage.setItem(SAVED_DATA, JSON.stringify(data));

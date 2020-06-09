@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import btnSearchAction from '../../Actions/btnSearchAction';
 import Search from '../Search';
 import Bag from '../Bag';
 import './styles.css';
@@ -7,6 +9,11 @@ import './styles.css';
 const bagItems = 3;
 
 const Nav = () => {
+  const dispatch= useDispatch();
+  function onClickSearch() {
+    dispatch(btnSearchAction('visible'));
+  }
+
   return (
     <>
       <nav id="Nav">
@@ -17,7 +24,7 @@ const Nav = () => {
 
           <ul className="Nav__menu">
             <li className="Nav__option">
-              <button>
+              <button onClick={onClickSearch}>
                 <i className="fa fa-search" aria-hidden="true"></i>
                 <span>Pesquisar</span>
               </button>
@@ -35,7 +42,7 @@ const Nav = () => {
           </ul>
         </div>
       </nav>
-      <Search handleSearch={() => 'visible'}/>
+      <Search />
       <Bag />
     </>
   );

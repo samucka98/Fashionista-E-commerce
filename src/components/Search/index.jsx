@@ -1,16 +1,25 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import btnSearchAction from '../../Actions/btnSearchAction';
 import ItemResult from '../ItemResult';
 import './styles.css';
 
-const Search = ({ handleSearch }) => {
+const Search = () => {
+  const btnSearch = useSelector((state) => state.btnSearch);
+  const dispatch = useDispatch();
+
+  function onClickBack() {
+    dispatch(btnSearchAction('hidden'));
+  }
+
   return (
-    <div className="Search">
-      <div className="Search__void"></div>
+    <div className="Search" style={{ visibility: btnSearch }}>
+      <div className="Search__void" onClick={onClickBack}></div>
 
       <div className="Search__section">
         <div className="Search__header">
           <div className="Search__title">
-            <button>
+            <button onClick={onClickBack}>
               <i className="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
             <span>Pesquisar</span>

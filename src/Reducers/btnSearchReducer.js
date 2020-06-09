@@ -1,6 +1,4 @@
-const INITIAL_STATE = {
-  begin: 'hidden'
-}
+const INITIAL_STATE = 'hidden';
 
 function btnSearchReducer(state = INITIAL_STATE, action) {
   switch (action.type) {

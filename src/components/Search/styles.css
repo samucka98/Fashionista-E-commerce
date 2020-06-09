@@ -1,6 +1,5 @@
-/* Para ocultar: remover o display flex para none */
 .Search {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 1;
   width: 100%;
