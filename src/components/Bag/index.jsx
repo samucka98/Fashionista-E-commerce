@@ -4,9 +4,6 @@ import btnBagAction from '../../Actions/btnBagAction';
 import ItemBag from '../ItemBag';
 import './styles.css';
 
-const items = 3;
-const subtotal = "R$ 459,70"
-
 const Bag = () => {
   const btnBag = useSelector((state) => state.btnBag);
   const bag = useSelector((state) => state.bag);
@@ -15,6 +12,8 @@ const Bag = () => {
   function onClickBack() {
     dispatch(btnBagAction('hidden'));
   }
+
+  console.log(bag);
 
   return (
     <div className="Bag" style={{ visibility: btnBag }}>
@@ -43,7 +42,7 @@ const Bag = () => {
         </div>
 
         <div className="Bag__footer">
-          Subtotal - { subtotal }
+          Subtotal - { bag ? 1 : 0 }
         </div>
       </div>
     </div>

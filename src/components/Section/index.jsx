@@ -32,7 +32,7 @@ const Section = () => {
 
     // Desenvolver um span para esta mensagem e disparar ele com um setInterval
     if (item.size === false) alert('Opssss escolha um tamanho!');
-    dispatch(addItem(item));
+    else dispatch(addItem(item));
   }
 
   return (
@@ -59,7 +59,7 @@ const Section = () => {
           {
             product.sizes.map(size =>
               size.available ? (
-                <div className="Section__radio">
+                <div key={ product.sizes.indexOf(size) } className="Section__radio">
                   <input className="szs" type="radio" name="size" value={ size.size }/>
                   <label htmlFor={ size.size }>{ size.size }</label>
                 </div>
