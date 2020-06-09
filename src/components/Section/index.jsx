@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../../Actions/BagAction';
 import imgErr from '../../assets/error.jpg';
 import './styles.css';
 
 const Section = () => {
-
+  const radios = document.getElementsByClassName('szs');
   const product = useSelector((state) => state.product);
-  const bag = useSelector((state) => state.bag);
+  const dispatch = useDispatch();
 
-  const [size, setSize] = useState('');
+  function getSize() {
+    for (let i = 0; i < radios.length; i++) {
+      if (radios[i].checked === true) {
+        return radios[i].value;
+      }
+    }
+    return false;
+  }
 
-  function onClickSelectSize(event) {
-    setSize(event.target.value);
-    console.log(size)
+  // fazer função para o valueCash
+  function addItemBag() {
+    let item = {
+      qtd: 1,
+      name: product.name,
+      image: product.image,
+      price: product.actual_price,
+      installments: product.installments,
+      valueCash: 100,
+      size: getSize()
+    }
+
+    // Desenvolver um span para esta mensagem e disparar ele com um setInterval
+    if (item.size === false) alert('Opssss escolha um tamanho!');
+    dispatch(addItem(item));
   }
 
   return (
@@ -40,15 +60,15 @@ const Section = () => {
             product.sizes.map(size =>
               size.available ? (
                 <div className="Section__radio">
-                  <input type="radio" name="size" value={size.size}/>
-                  <label htmlFor={size.size}>{size.size}</label>
+                  <input className="szs" type="radio" name="size" value={ size.size }/>
+                  <label htmlFor={ size.size }>{ size.size }</label>
                 </div>
               ) : undefined
             )
           }
         </div>
 
-        <button className="Section__add">Adicionar à sacola</button>
+        <button className="Section__add" type="submit" onClick={ addItemBag }>Adicionar à sacola</button>
       </div>
     </section>
   );

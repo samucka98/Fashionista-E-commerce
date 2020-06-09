@@ -1,13 +1,13 @@
-export function addItem(item = {}) {
+export function addItem(item) {
   return {
-    action: 'ADD',
+    type: 'ADD',
     payload: item
   }
 }
 
-export function removeItem(item = {}) {
+export function removeItem(item) {
   return {
-    action: 'REMOVE',
+    type: 'REMOVE',
     payload: item
   }
 }
