@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import btnSearchAction from '../../Actions/btnSearchAction';
+import btnBagAction from '../../Actions/btnBagAction';
 import Search from '../Search';
 import Bag from '../Bag';
 import './styles.css';
@@ -10,8 +11,13 @@ const bagItems = 3;
 
 const Nav = () => {
   const dispatch= useDispatch();
+  
   function onClickSearch() {
     dispatch(btnSearchAction('visible'));
+  }
+
+  function onClickBag() {
+    dispatch(btnBagAction('visible'));
   }
 
   return (
@@ -31,7 +37,7 @@ const Nav = () => {
             </li>
 
             <li className="Nav__option">
-              <button>
+              <button onClick={onClickBag}>
                 <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                 <span>Minhas Compras</span>
                 <div className="Nav__qtd">

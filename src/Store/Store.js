@@ -3,6 +3,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import productsReducer from '../Reducers/productsReducer'
 import productReducer from '../Reducers/productReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
+import btnBagReducer from '../Reducers/btnBagReducer';
 
 const SAVED_DATA = "SavedData";
 
@@ -21,7 +22,8 @@ function loadState() {
 const allReducers = combineReducers({
   products: productsReducer,
   product: productReducer,
-  btnSearch: btnSearchReducer
+  btnSearch: btnSearchReducer,
+  btnBag: btnBagReducer
 });
 
 const store = createStore(allReducers, loadState(), applyMiddleware(thunk));
