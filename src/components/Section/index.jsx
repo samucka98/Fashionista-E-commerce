@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import imgErr from '../../assets/error.jpg';
 import './styles.css';
@@ -6,6 +6,14 @@ import './styles.css';
 const Section = () => {
 
   const product = useSelector((state) => state.product);
+  const bag = useSelector((state) => state.bag);
+
+  const [size, setSize] = useState('');
+
+  function onClickSelectSize(event) {
+    setSize(event.target.value);
+    console.log(size)
+  }
 
   return (
     <section>
@@ -28,9 +36,14 @@ const Section = () => {
         </div>
 
         <div className="Section__selectSize">
-          { // Quando a págia é atualizada o estado é perdido, logo a aplicação vai quebrar por causa do map que nao tem um array!
+          {
             product.sizes.map(size =>
-              size.available ? <button>{size.size}</button> : undefined
+              size.available ? (
+                <div className="Section__radio">
+                  <input type="radio" name="size" value={size.size}/>
+                  <label htmlFor={size.size}>{size.size}</label>
+                </div>
+              ) : undefined
             )
           }
         </div>

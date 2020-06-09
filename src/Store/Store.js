@@ -2,6 +2,7 @@ import thunk from 'redux-thunk';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import productsReducer from '../Reducers/productsReducer'
 import productReducer from '../Reducers/productReducer';
+import bagReducer from '../Reducers/bagReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 import btnBagReducer from '../Reducers/btnBagReducer';
 
@@ -23,7 +24,8 @@ const allReducers = combineReducers({
   products: productsReducer,
   product: productReducer,
   btnSearch: btnSearchReducer,
-  btnBag: btnBagReducer
+  btnBag: btnBagReducer,
+  bag: bagReducer
 });
 
 const store = createStore(allReducers, loadState(), applyMiddleware(thunk));
