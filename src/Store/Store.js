@@ -6,7 +6,7 @@ import bagReducer from '../Reducers/bagReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 import btnBagReducer from '../Reducers/btnBagReducer';
 
-const SAVED_DATA = "SavedData";
+const SAVED_DATA = "DataOfState";
 
 function persistState(data) {
   localStorage.setItem(SAVED_DATA, JSON.stringify(data));

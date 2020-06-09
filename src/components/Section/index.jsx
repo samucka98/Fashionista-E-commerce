@@ -9,7 +9,7 @@ const Section = () => {
   const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
-  function getSize() {
+  function getSizeValue() {
     for (let i = 0; i < radios.length; i++) {
       if (radios[i].checked === true) {
         return radios[i].value;
@@ -18,7 +18,11 @@ const Section = () => {
     return false;
   }
 
-  // fazer função para o valueCash
+  function getValueCash() {
+    let cash = product.actual_price.replace('R$', '').trim().replace(',','.');
+    return Number(cash);
+  }
+
   function addItemBag() {
     let item = {
       qtd: 1,
@@ -26,9 +30,11 @@ const Section = () => {
       image: product.image,
       price: product.actual_price,
       installments: product.installments,
-      valueCash: 100,
-      size: getSize()
+      valueCash: getValueCash(),
+      size: getSizeValue()
     }
+
+    console.log(item);
 
     // Desenvolver um span para esta mensagem e disparar ele com um setInterval
     if (item.size === false) alert('Opssss escolha um tamanho!');
@@ -42,18 +48,14 @@ const Section = () => {
       </div>
 
       <div className="Section__infos">
-        <div className="Section__name">
-          { product.name }
-        </div>
+        <div className="Section__name">{ product.name }</div>
 
         <div className="Section__price">
           <span className="Section__priceAct">{ product.actual_price }</span>
           <span className="Section__installments">{ product.installments }</span>
         </div>
 
-        <div className="Section__size">
-          Escolha o tamanho
-        </div>
+        <div className="Section__size">Escolha o tamanho</div>
 
         <div className="Section__selectSize">
           {
@@ -68,7 +70,7 @@ const Section = () => {
           }
         </div>
 
-        <button className="Section__add" type="submit" onClick={ addItemBag }>Adicionar à sacola</button>
+        <button className="Section__add" onClick={ addItemBag }>Adicionar à sacola</button>
       </div>
     </section>
   );

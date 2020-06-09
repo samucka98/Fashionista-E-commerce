@@ -1,7 +1,7 @@
 function bagReducer(state = [], action) {
-  switch (action.payload) {
+  switch (action.type) {
     case 'ADD':
-      return [...state, action.payload]
+      return [...state, action.payload];
 
     case 'REMOVE':
       return state.filter(item => item.id !== action.payload );
