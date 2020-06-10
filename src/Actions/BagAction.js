@@ -5,9 +5,10 @@ export function addItem(item) {
   }
 }
 
-export function removeItem(nameItem) {
+export function removeItem(nameItem, size) {
   return {
     type: 'REMOVE',
+    size,
     payload: nameItem
   }
 }

@@ -14,6 +14,15 @@ const Nav = () => {
   function onClickSearch() { dispatch(btnSearchAction('visible')); }
   function onClickBag() { dispatch(btnBagAction('visible')); }
 
+    // Faz o cálculo da quantidade de itens a sacola
+    function qtdBag(arr, size) {
+      let n = 0;
+      for (let i = 0; i < size; i++) {
+        n += arr[i].qtd;
+      }
+      return n;
+    }
+
   return (
     <>
       <nav id="Nav">
@@ -35,7 +44,7 @@ const Nav = () => {
                 <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                 <span>Minhas Compras</span>
                 <div className="Nav__qtd">
-                  { bag.length ? bag.length : 0 }
+                  { bag.length ? qtdBag(bag, bag.length) : 0 }
                 </div>
               </button>
             </li>

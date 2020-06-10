@@ -7,7 +7,7 @@ const ItemBag = ({ item }) => {
   const dispatch = useDispatch();
 
   function rmItem() {
-    dispatch(removeItem(item.name));
+    dispatch(removeItem(item.name, item.size));
   }
 
   function inctItem() {

@@ -13,6 +13,7 @@ const Bag = () => {
     dispatch(btnBagAction('hidden'));
   }
 
+  // Faz o cálculo do valor total dos itens adicionados a sacola
   function subtotal(arr, size) {
     let n = 0;
     for (let i = 0; i < size; i++) {
@@ -25,9 +26,10 @@ const Bag = () => {
     return n;
   }
 
+  // Faz o cálculo da quantidade de itens a sacola
   function qtdBag(arr, size) {
     let n = 0;
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < size; i++) {  
       n += arr[i].qtd;
     }
     return n;
