@@ -6,6 +6,12 @@ function bagReducer(state = [], action) {
     case 'REMOVE':
       return state.filter(item => item.name !== action.payload );
 
+    case 'INCREMENT':
+      return state;
+
+    case 'DECREMENT':
+      return state;
+
     default:
       return state;
   }
