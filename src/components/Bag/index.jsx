@@ -16,7 +16,11 @@ const Bag = () => {
   function subtotal(arr, size) {
     let n = 0;
     for (let i = 0; i < size; i++) {
-      n += arr[i].valueCash;
+      if (arr[i].qtd === 1) {
+        n += arr[i].valueCash;
+      } else {
+        n += arr[i].valueCash * arr[i].qtd;
+      }
     }
     return n;
   }
@@ -48,7 +52,7 @@ const Bag = () => {
         </div>
 
         <div className="Bag__footer">
-          Subtotal - { bag ? subtotal(bag, bag.length) : 0 }
+          Subtotal - R$ { bag ? subtotal(bag, bag.length).toFixed(2) : 0 }
         </div>
       </div>
     </div>
