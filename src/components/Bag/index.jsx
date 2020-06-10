@@ -25,6 +25,14 @@ const Bag = () => {
     return n;
   }
 
+  function qtdBag(arr, size) {
+    let n = 0;
+    for (let i = 0; i < size; i++) {
+      n += arr[i].qtd;
+    }
+    return n;
+  }
+
   return (
     <div className="Bag" style={{ visibility: btnBag }}>
       <div className="Bag__void" onClick={ onClickBack }></div>
@@ -36,7 +44,7 @@ const Bag = () => {
               <i className="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
 
-            <span>Sacola ({ bag.length ? bag.length : 0 })</span>
+            <span>Sacola ({ bag.length ? qtdBag(bag, bag.length) : 0 })</span>
           </div>
         </div>
 
