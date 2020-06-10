@@ -6,6 +6,7 @@ import bagReducer from '../Reducers/bagReducer';
 import searchReducer from '../Reducers/searchReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 import btnBagReducer from '../Reducers/btnBagReducer';
+import countReducer from '../Reducers/countReducer';
 
 const SAVED_DATA = "FASHIONISTA";
 
@@ -27,7 +28,8 @@ const allReducers = combineReducers({
   btnSearch: btnSearchReducer,
   btnBag: btnBagReducer,
   bag: bagReducer,
-  search: searchReducer
+  search: searchReducer,
+  count: countReducer
 });
 
 const store = createStore(allReducers, loadState(), applyMiddleware(thunk));
