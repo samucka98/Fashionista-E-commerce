@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem } from '../../Actions/BagAction';
+import { addItem, incrementItem } from '../../Actions/BagAction';
 import imgErr from '../../assets/error.jpg';
 import './styles.css';
 
 const Section = () => {
   const radios = document.getElementsByClassName('szs');
   const product = useSelector((state) => state.product);
+  const bag = useSelector((state) => state.bag);
   const dispatch = useDispatch();
 
   function getSizeValue() {
@@ -21,6 +22,23 @@ const Section = () => {
   function getValueCash() {
     let cash = product.actual_price.replace('R$', '').trim().replace(',','.');
     return Number(cash);
+  }
+
+  /**
+   * função onValidAdd
+   * Valida a adição de novos itens à sacola
+   * 
+   * para adicionar um novo item o tamanho deve ser diferente caso seja o mesmo item
+   * caso o item tenha tamanhos iguais este tera a sua quantidade incrementada em mais um.
+   */
+  function onValidAdd(item) {
+    let add = true;
+    for (let i = 0; i < bag.length; i++) {
+      if (item.name === bag[i].name && item.size === bag[i].size) {
+        return false;
+      }
+    }
+    return add;
   }
 
   function addItemBag() {
@@ -38,7 +56,13 @@ const Section = () => {
 
     // Desenvolver um span para esta mensagem e disparar ele com um setInterval
     if (item.size === false) alert('Opssss escolha um tamanho!');
-    else dispatch(addItem(item));
+    else {
+      if (onValidAdd(item)) {
+        dispatch(addItem(item));
+      } else {
+        dispatch(incrementItem(item.name, 1));
+      }
+    }
   }
 
   return (
