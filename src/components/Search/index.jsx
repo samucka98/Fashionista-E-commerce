@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import btnSearchAction from '../../Actions/btnSearchAction';
+import { searchIndexAction } from '../../Actions/searchAction';
 import ItemResult from '../ItemResult';
 import './styles.css';
 
 const Search = () => {
   const products = useSelector((state) => state.products);
+  const search = useSelector((state) => state.search);
   const btnSearch = useSelector((state) => state.btnSearch);
   const dispatch = useDispatch();
 
-  const [items, setItems] = useState([]);
 
   function onClickBack() {
     dispatch(btnSearchAction('hidden'));
@@ -22,7 +23,7 @@ const Search = () => {
     products.forEach(element => {
       if (txt.length >= 2) {
         if (element.name.indexOf(txt) > -1) {
-          setItems([...items, element])
+          dispatch(searchIndexAction(element));
         }
       }
     });
@@ -55,7 +56,7 @@ const Search = () => {
         </div>
         <div className="Search__body">
           {
-            items.map(product => 
+            search.map(product => 
               <ItemResult
                 key={ products.indexOf(product) }
                 product={ product }

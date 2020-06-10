@@ -3,10 +3,11 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import productsReducer from '../Reducers/productsReducer'
 import productReducer from '../Reducers/productReducer';
 import bagReducer from '../Reducers/bagReducer';
+import searchReducer from '../Reducers/searchReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 import btnBagReducer from '../Reducers/btnBagReducer';
 
-const SAVED_DATA = "Fashionista";
+const SAVED_DATA = process.env.STATE_LOCAL_STORAGE;
 
 function persistState(data) {
   localStorage.setItem(SAVED_DATA, JSON.stringify(data));
@@ -25,7 +26,8 @@ const allReducers = combineReducers({
   product: productReducer,
   btnSearch: btnSearchReducer,
   btnBag: btnBagReducer,
-  bag: bagReducer
+  bag: bagReducer,
+  search: searchReducer
 });
 
 const store = createStore(allReducers, loadState(), applyMiddleware(thunk));
