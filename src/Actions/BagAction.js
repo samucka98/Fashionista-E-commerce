@@ -12,16 +12,20 @@ export function removeItem(nameItem) {
   }
 }
 
-export function incrementItem(itemQtd) {
+export function incrementItem(nameItem, qtd) {
   return {
     type: 'INCREMENT',
-    payload: itemQtd + 1
+    name: nameItem,
+    default: qtd,
+    payload: qtd + 1
   }
 }
 
-export function decrementItem(itemQtd) {
+export function decrementItem(nameItem, qtd) {
   return {
     type: 'DECREMENT',
-    payload: itemQtd - 1
+    name: nameItem,
+    default: qtd,
+    payload: qtd - 1
   }
 }

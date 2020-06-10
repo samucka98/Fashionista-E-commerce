@@ -13,7 +13,13 @@ const Bag = () => {
     dispatch(btnBagAction('hidden'));
   }
 
-  console.log(bag);
+  function subtotal(arr, size) {
+    let n = 0;
+    for (let i = 0; i < size; i++) {
+      n += arr[i].valueCash;
+    }
+    return n;
+  }
 
   return (
     <div className="Bag" style={{ visibility: btnBag }}>
@@ -26,7 +32,7 @@ const Bag = () => {
               <i className="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
 
-            <span>Sacola ({ bag.legnth ? bag.legnth : 0 })</span>
+            <span>Sacola ({ bag.length ? bag.length : 0 })</span>
           </div>
         </div>
 
@@ -42,7 +48,7 @@ const Bag = () => {
         </div>
 
         <div className="Bag__footer">
-          Subtotal - { bag ? 1 : 0 }
+          Subtotal - { bag ? subtotal(bag, bag.length) : 0 }
         </div>
       </div>
     </div>

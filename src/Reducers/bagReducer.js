@@ -7,9 +7,19 @@ function bagReducer(state = [], action) {
       return state.filter(item => item.name !== action.payload );
 
     case 'INCREMENT':
+
+      state.map(element => (
+        element.name === action.name ? element.qtd = action.payload : element.qtd = action.default
+      ))
+
       return state;
 
     case 'DECREMENT':
+
+      state.map(element => (
+        element.name === action.name ? element.qtd = action.payload : element.qtd = action.default
+      ))
+
       return state;
 
     default:

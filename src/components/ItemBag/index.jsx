@@ -4,25 +4,21 @@ import { removeItem, incrementItem, decrementItem } from '../../Actions/BagActio
 import './styles.css';
 
 const ItemBag = ({ item }) => {
-
   const dispatch = useDispatch();
 
   function rmItem() {
-    // nome
     dispatch(removeItem(item.name));
   }
 
   function inctItem() {
-    // unidade
-    dispatch(incrementItem(item));
+    dispatch(incrementItem(item.name, item.qtd));
   }
 
   function decItem() {
-    // unidade
     if (item.qtd === 1) {
       rmItem();
     } else {
-      dispatch(decrementItem(item));
+      dispatch(decrementItem(item.name, item.qtd));
     }
   }
 
