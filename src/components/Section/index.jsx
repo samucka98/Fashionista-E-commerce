@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { persistStateInLocalStorage } from '../../Store/save';
 import { addItem, incrementItem } from '../../Actions/BagAction';
 import imgErr from '../../assets/error.jpg';
 import './styles.css';
@@ -9,6 +10,8 @@ const Section = () => {
   const product = useSelector((state) => state.product);
   const bag = useSelector((state) => state.bag);
   const dispatch = useDispatch();
+
+  persistStateInLocalStorage("Fashionista@Product", product);
 
   function getSizeValue() {
     for (let i = 0; i < radios.length; i++) {

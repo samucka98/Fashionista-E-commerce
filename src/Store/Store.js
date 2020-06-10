@@ -7,7 +7,7 @@ import searchReducer from '../Reducers/searchReducer';
 import btnSearchReducer from '../Reducers/btnSearchReducer';
 import btnBagReducer from '../Reducers/btnBagReducer';
 
-const SAVED_DATA = process.env.STATE_LOCAL_STORAGE;
+const SAVED_DATA = "FASHIONISTA";
 
 function persistState(data) {
   localStorage.setItem(SAVED_DATA, JSON.stringify(data));
