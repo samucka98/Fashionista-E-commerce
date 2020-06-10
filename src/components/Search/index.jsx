@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import {  } from '../../Store/save';
 import btnSearchAction from '../../Actions/btnSearchAction';
 import { searchIndexAction } from '../../Actions/searchAction';
 import ItemResult from '../ItemResult';
@@ -30,7 +29,6 @@ const Search = () => {
       if (txt.length >= 2) {
         if (element.name.indexOf(txt) > -1) {
           dispatch(searchIndexAction(element));
-          console.log(search)
         }
       }
     });
@@ -65,10 +63,11 @@ const Search = () => {
           { search.length > 0 ?
             search.map(product => 
               <ItemResult
+                key={search.indexOf(product)}
                 product={ product }
               />
             )
-            : null
+            : <></>
           }
         </div>
       </div>

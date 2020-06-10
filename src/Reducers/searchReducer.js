@@ -1,6 +1,6 @@
 function searchReducer(state = [], action) {
   switch(action.type) {
-    case 'SEARCH':
+    case 'SEARCH_INDEX':
       return [...state, action.payload];
 
     case 'CLEAR':

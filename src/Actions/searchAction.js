@@ -1,6 +1,6 @@
 export function searchIndexAction(item = {}) {
   return {
-    type: 'SEARCH',
+    type: 'SEARCH_INDEX',
     payload: item
   };
 }

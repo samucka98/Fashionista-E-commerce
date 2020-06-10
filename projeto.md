@@ -26,7 +26,7 @@
 
 ### Faltantes
  * Incremento e decremento da sacola em tempo real
- * Pesquisa em tempo real
+ * Pesquisa em tempo real(ajustar)
  * PopUp de nao escolhi um tamanho!
  * Fechar pedido
  * PopUp de pedido processado!
