@@ -21,3 +21,20 @@
 ## Implementação
 ## Testes (opcional da minha parte!)
 ## Deploy
+
+-------------------
+
+### Faltantes
+ * Incremento e decremento da sacola em tempo real
+ * Pesquisa em tempo real
+ * PopUp de nao escolhi um tamanho!
+ * Fechar pedido
+ * PopUp de pedido processado!
+ * Botao para ver estoque
+ * Teste final de responsividade
+ * Revisão dos requisitos
+ * Build
+ * Deploy
+ * Feedback
+ * Video
+ * Slide

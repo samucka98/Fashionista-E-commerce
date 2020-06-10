@@ -20,6 +20,7 @@ const Item = ({ product }) => {
         }
         <img src={ product.image ? product.image : imgErr } alt="img_error" />
       </div>
+      <div className="Item__name">{ product.name }</div>
       <div className="Item__footer">
         {
           product.regular_price === product.actual_price
