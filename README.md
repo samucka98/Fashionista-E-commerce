@@ -77,3 +77,22 @@ A recomendação é para que o deploy seja feito no netilify (gratuito) ou servi
 * Layouts: Indicador de produtos no ícone do carrinho
 * Layouts: Carrinho de compras aberto
 * Layouts: Busca em tempo real
+
+# Screenshots
+
+## Web
+
+![](/src/assets/screenshots/web1.png)
+![](/src/assets/screenshots/web2.png)
+![](/src/assets/screenshots/web3.png)
+![](/src/assets/screenshots/web4.png)
+![](/src/assets/screenshots/web5.png)
+
+## Mobile
+![](/src/assets/screenshots/mob1.png)
+![](/src/assets/screenshots/mob2.png)
+![](/src/assets/screenshots/mob3.png)
+![](/src/assets/screenshots/mob4.png)
+
+# Acessar
+https://fashionista-samucka98.netlify.app/
