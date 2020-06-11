@@ -1,11 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeItem, incrementItem, decrementItem } from '../../Actions/BagAction';
-import { decrementAction, incrementAction } from '../../Actions/countAction';
 import './styles.css';
 
 const ItemBag = ({ item }) => {
-  const count = useSelector((state) => state.count);
   const dispatch = useDispatch();
 
   function rmItem() {
@@ -14,7 +12,6 @@ const ItemBag = ({ item }) => {
 
   function inctItem() {
     dispatch(incrementItem(item.name, item.qtd));
-    dispatch(incrementAction());
   }
 
   function decItem() {
@@ -22,7 +19,6 @@ const ItemBag = ({ item }) => {
       rmItem();
     } else {
       dispatch(decrementItem(item.name, item.qtd));
-      dispatch(decrementAction());
     }
   }
 
@@ -39,7 +35,7 @@ const ItemBag = ({ item }) => {
         <div className="ItemBag__size">Tam: { item.size }</div>
         <div className="ItemBag__incDec">
           <button id="decrement" onClick={decItem}>-</button>
-            { count }
+            { item.qtd }
           <button id="increment" onClick={inctItem}>+</button>
         </div>
         <div className="ItemBag__price">{ item.price }</div>
